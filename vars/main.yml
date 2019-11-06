@@ -1,0 +1,3 @@
+---
+# Scratch directory to use for downloading the installation script
+nix_script_dir: "/tmp"

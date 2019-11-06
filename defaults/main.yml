@@ -1,0 +1,3 @@
+---
+# User to install nix for
+nix_user: "{{ ansible_user }}"

@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Nik Reiman
+  description: Installs nix package manager
+  company: Ableton AG
+
+  license: BSD
+
+  min_ansible_version: 1.2
+
+  github_branch: master
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Mac OS X
+      versions:
+        - all
+
+  galaxy_tags: []
+
+  dependencies: []
