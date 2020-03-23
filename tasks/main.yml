@@ -1,49 +1,21 @@
 ---
-- name: Initialize should_install_nix fact
-  set_fact:
-    should_install_nix: false
-
-- name: Ensure default nix directory exists
+- name: Ensure nix directory exists
   become: true
   file:
     path: "/nix"
     owner: "{{ nix_user }}"
     state: directory
-  register: nix_mkdir
-  when: nix_directory == "/nix"
-
-- name: Ensure non-default nix directory exists
-  become: true
-  file:
-    path: "{{ nix_directory }}"
-    owner: "{{ nix_user }}"
-    state: directory
-  register: nix_mkdir
-  when: nix_directory != "/nix"
-
-- name: Create symlink from non-default nix directory to /nix
-  become: true
-  file:
-    src: "{{ nix_directory }}"
-    dest: "/nix"
-    owner: "{{ nix_user }}"
-    state: link
-  when: nix_directory != "/nix"
-
-- name: Set should_install_nix fact to true
-  set_fact:
-    should_install_nix: true
-  when: nix_mkdir is changed
+  register: nix_directory
 
 - name: Download installer script
   get_url:
     url: "https://nixos.org/nix/install"
     dest: "{{ nix_script_dir }}/install_nix.sh"
     mode: 0755
-  when: should_install_nix
+  when: nix_directory is changed
 
 - name: Install nix
   become: true
   become_user: "{{ nix_user }}"
   command: "{{ nix_script_dir }}/install_nix.sh"
-  when: should_install_nix
+  when: nix_directory is changed
