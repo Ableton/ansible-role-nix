@@ -5,6 +5,7 @@
     path: "/nix"
     owner: "{{ nix_user }}"
     state: directory
+    mode: "0755"
   register: nix_directory
 
 - name: Download installer script
