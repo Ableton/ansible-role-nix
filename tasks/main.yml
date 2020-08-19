@@ -11,7 +11,7 @@
   get_url:
     url: "https://nixos.org/nix/install"
     dest: "{{ nix_script_dir }}/install_nix.sh"
-    mode: 0755
+    mode: "0755"
   when: nix_directory is changed
 
 - name: Install nix
