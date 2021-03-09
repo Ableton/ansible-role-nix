@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: nix
-  author: Nik Reiman
+  author: ableton
   description: Installs nix package manager
   company: Ableton AG
 
