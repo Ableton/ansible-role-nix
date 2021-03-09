@@ -1,15 +1,16 @@
 ---
 galaxy_info:
-  role_name: nix
   author: ableton
-  description: Installs nix package manager
   company: Ableton AG
-
-  license: BSD
-
-  min_ansible_version: 1.2
-
+  description: Installs nix package manager
   github_branch: master
+  license: BSD
+  min_ansible_version: 1.2
+  role_name: nix
+
+  galaxy_tags:
+    - development
+    - nix
 
   platforms:
     - name: Debian
@@ -21,9 +22,5 @@ galaxy_info:
     - name: Mac OS X
       versions:
         - all
-
-  galaxy_tags:
-    - development
-    - nix
 
 dependencies: []
