@@ -5,7 +5,7 @@ galaxy_info:
   description: Installs nix package manager
   github_branch: master
   license: BSD
-  min_ansible_version: 1.2
+  min_ansible_version: 2.10
   role_name: nix
 
   galaxy_tags:
