@@ -8,15 +8,16 @@
     mode: "0755"
   register: nix_directory
 
-- name: Download installer script
-  get_url:
-    url: "https://nixos.org/nix/install"
-    dest: "{{ nix_script_dir }}/install_nix.sh"
-    mode: "0755"
-  when: nix_directory is changed
-
 - name: Install nix
-  become: true
-  become_user: "{{ nix_user }}"
-  command: "{{ nix_script_dir }}/install_nix.sh"
+  block:
+    - name: Download installer script
+      get_url:
+        url: "https://nixos.org/nix/install"
+        dest: "{{ nix_script_dir }}/install_nix.sh"
+        mode: "0755"
+
+    - name: Run installer script
+      become: true
+      become_user: "{{ nix_user }}"
+      command: "{{ nix_script_dir }}/install_nix.sh"
   when: nix_directory is changed
