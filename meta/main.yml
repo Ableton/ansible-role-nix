@@ -3,7 +3,6 @@ galaxy_info:
   author: ableton
   company: Ableton AG
   description: Installs nix package manager
-  github_branch: master
   license: MIT
   min_ansible_version: 2.10
   role_name: nix
