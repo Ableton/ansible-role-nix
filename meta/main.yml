@@ -18,7 +18,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: Mac OS X
+    - name: macOS
       versions:
         - all
 
