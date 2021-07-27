@@ -1,16 +1,45 @@
-Nix Role
-========
+Ansible role ableton.nix
+========================
 
 This role installs the [nix][nix] software on the given Ansible host and configures it for
 a given user.
 
+Requirements
+------------
 
-Supported Host OS Types
------------------------
+Ansible >= 2.9, and a target host running either a Debian-flavor of Linux or macOS. Other
+Linux flavors will probably work with this role, but they haven't been tested. 
 
-This role only supports Unix hosts, given that `nix` only supports the same.
+Role Variables
+--------------
 
-See `defaults/main.yml` for further documentation of supported variables.
+See the [`defaults/main.yml`](defaults/main.yml) file for full documentation on required
+and optional role variables.
+
+Example Playbook
+----------------
+
+```yaml
+---
+- name: Install nix on hosts
+  hosts: "all"
+
+  roles:
+    - ableton.nix
+```
+
+License
+-------
+
+MIT
+
+Maintainers
+-----------
+
+This project is maintained by the following GitHub users:
+
+- [@ala-ableton](https://github.com/ala-ableton)
+- [@nre-ableton](https://github.com/nre-ableton)
 
 
 [nix]: https://nixos.org/nix
