@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    nix_user: molecule
+  roles:
+    - ansible-role-nix
