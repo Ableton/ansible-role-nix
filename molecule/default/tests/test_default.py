@@ -1,3 +1,5 @@
+"""Molecule tests for the default scenario."""
+
 import os
 
 import testinfra.utils.ansible_runner
@@ -9,6 +11,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_nix_installed(host):
+    """Test that nix was installed as expected."""
     nix_dir = host.file("/nix")
     nix_channels = host.file("/home/molecule/.nix-channels")
 
