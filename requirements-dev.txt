@@ -96,7 +96,7 @@ molecule==3.5.2
     # via
     #   -r requirements-dev.in
     #   molecule-docker
-molecule-docker==1.0.2
+molecule-docker==1.1.0
     # via -r requirements-dev.in
 mypy-extensions==0.4.3
     # via black
