@@ -22,7 +22,7 @@ bcrypt==3.2.0
     # via paramiko
 binaryornot==0.4.4
     # via cookiecutter
-black==21.9b0
+black==21.10b0
     # via -r requirements-dev.in
 bracex==2.1.1
     # via wcmatch
@@ -164,8 +164,6 @@ rich==10.12.0
     #   molecule
 ruamel.yaml==0.17.16
     # via ansible-lint
-ruamel.yaml.clib==0.2.6
-    # via ruamel.yaml
 selinux==0.2.1
     # via
     #   molecule
