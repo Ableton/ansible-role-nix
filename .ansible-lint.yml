@@ -1,6 +1,7 @@
 ---
 exclude_paths:
   - .ansible/roles
+  - .venv
   - meta
   - molecule
 parseable: true
