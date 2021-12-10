@@ -22,7 +22,7 @@ bcrypt==3.2.0
     # via paramiko
 binaryornot==0.4.4
     # via cookiecutter
-black==21.11b1
+black==21.12b0
     # via -r requirements-dev.in
 bracex==2.1.1
     # via wcmatch
@@ -148,8 +148,6 @@ pyyaml==5.4.1
     #   ansible-core
     #   ansible-lint
     #   molecule
-regex==2021.9.30
-    # via black
 requests==2.26.0
     # via
     #   cookiecutter
