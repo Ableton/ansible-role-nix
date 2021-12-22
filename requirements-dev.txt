@@ -4,13 +4,13 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible==5.0.1
+ansible==5.1.0
     # via -r requirements-dev.in
 ansible-compat==0.5.0
     # via
     #   molecule
     #   molecule-docker
-ansible-core==2.12.0
+ansible-core==2.12.1
     # via ansible
 ansible-lint==5.3.1
     # via -r requirements-dev.in
