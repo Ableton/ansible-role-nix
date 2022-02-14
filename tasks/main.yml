@@ -19,5 +19,5 @@
     - name: Run installer script
       become: true
       become_user: "{{ nix_user }}"
-      command: "{{ nix_script_dir }}/install_nix.sh"
+      command: "{{ nix_script_dir }}/install_nix.sh"  # noqa no-changed-when
   when: nix_directory is changed
