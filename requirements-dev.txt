@@ -92,7 +92,7 @@ markupsafe==2.0.1
     # via jinja2
 mccabe==0.6.1
     # via flake8
-molecule==3.6.0
+molecule==3.6.1
     # via
     #   -r requirements-dev.in
     #   molecule-docker
