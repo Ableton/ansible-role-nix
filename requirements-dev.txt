@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible==5.3.0
+ansible==5.4.0
     # via -r requirements-dev.in
 ansible-compat==1.0.0
     # via
