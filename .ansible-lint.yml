@@ -7,3 +7,4 @@ exclude_paths:
 parseable: true
 skip_list:
   - "empty-string-compare"
+  - "fqcn-builtins"
