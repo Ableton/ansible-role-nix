@@ -5,7 +5,7 @@ library(identifier: 'python-utils@0.12', changelog: false)
 
 devToolsProject.run(
   setup: { data ->
-    Object venv = virtualenv.createWithPyenv('3.10.0')
+    Object venv = virtualenv.createWithPyenv('3.10.3')
     venv.run('pip install -r requirements-dev.txt')
     data['rolesPath'] = "${env.WORKSPACE}/.ansible/roles"
     venv.run("ansible-galaxy install --no-deps --roles-path ${data.rolesPath}" +
