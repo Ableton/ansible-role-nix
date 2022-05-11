@@ -15,12 +15,14 @@ ansible-core==2.12.5
     # via
     #   ansible
     #   ansible-lint
-ansible-lint==6.0.2
+ansible-lint==6.1.0
     # via -r requirements-dev.in
 arrow==1.2.0
     # via jinja2-time
 attrs==21.2.0
-    # via pytest
+    # via
+    #   jsonschema
+    #   pytest
 bcrypt==3.2.0
     # via paramiko
 binaryornot==0.4.4
@@ -91,6 +93,8 @@ jinja2==3.0.2
     #   molecule
 jinja2-time==0.2.0
     # via cookiecutter
+jsonschema==4.5.1
+    # via ansible-lint
 markupsafe==2.0.1
     # via jinja2
 mccabe==0.6.1
@@ -139,8 +143,12 @@ pynacl==1.4.0
     # via paramiko
 pyparsing==2.4.7
     # via packaging
+pyrsistent==0.18.1
+    # via jsonschema
 pytest==6.2.5
-    # via pytest-testinfra
+    # via
+    #   ansible-lint
+    #   pytest-testinfra
 pytest-testinfra==6.7.0
     # via -r requirements-dev.in
 python-dateutil==2.8.2
