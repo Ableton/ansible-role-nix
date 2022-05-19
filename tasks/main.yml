@@ -19,5 +19,7 @@
     - name: Run installer script
       become: true
       become_user: "{{ nix_user }}"
+      # TODO: Remove this suppression when ansible-lint learns to parse block conditions
+      # See: https://github.com/ansible/ansible-lint/issues/1894
       command: "{{ nix_script_dir }}/install_nix.sh"  # noqa no-changed-when
   when: nix_directory is changed  # noqa no-handler
