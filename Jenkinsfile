@@ -43,5 +43,19 @@ devToolsProject.run(
   deploy: { data ->
     String versionNumber = readFile('VERSION').trim()
     version.tag(versionNumber)
+
+    List repoSlugParts = params.JENKINS_REPO_SLUG.split('/')
+    String repoOrg = repoSlugParts[0]
+    String repoName = repoSlugParts[1]
+    withCredentials([
+      string(credentialsId: 'ansible-galaxy-api-key', variable: 'API_KEY')
+    ]) {
+      data.venv.run(
+        label: 'Publish to Ansible Galaxy',
+        script: "ansible-galaxy role import --branch ${versionNumber}" +
+          ' --api-key $API_KEY' +  // avoid exposing the credential in the build log
+          " ${repoOrg} ${repoName}",
+      )
+    }
   },
 )
