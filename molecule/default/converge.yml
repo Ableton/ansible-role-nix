@@ -2,6 +2,7 @@
 - name: Converge
   hosts: all
   vars:
+    nix_flakes: true
     nix_user: molecule
   roles:
     - ansible-role-nix

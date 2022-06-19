@@ -2,7 +2,7 @@ Ansible role ableton.nix
 ========================
 
 This role installs the [nix][nix] software on the given Ansible host and configures it for
-a given user.
+a given user. It also optionally sets up [nix flakes][nix flakes].
 
 Requirements
 ------------
@@ -43,3 +43,4 @@ This project is maintained by the following GitHub users:
 
 
 [nix]: https://nixos.org/nix
+[nix flakes]: https://nixos.wiki/wiki/Flakes

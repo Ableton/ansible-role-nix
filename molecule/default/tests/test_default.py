@@ -10,6 +10,20 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 ).get_hosts("all")
 
 
+def test_nix_config(host):
+    """Test that nix was installed as expected."""
+    config_dir = host.file("/home/molecule/.config")
+    nix_conf = host.file("/home/molecule/.config/nix/nix.conf")
+
+    assert config_dir.is_directory
+    assert config_dir.mode == 0o0755
+    assert config_dir.user == "molecule"
+    assert nix_conf.is_file
+    assert nix_conf.mode == 0o0644
+    assert nix_conf.user == "molecule"
+    assert "nix-command flakes" in nix_conf.content_string
+
+
 def test_nix_installed(host):
     """Test that nix was installed as expected."""
     nix_dir = host.file("/nix")
