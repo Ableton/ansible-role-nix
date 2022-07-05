@@ -8,7 +8,7 @@ Requirements
 ------------
 
 Ansible >= 2.10, and a target host running either a Debian-flavor of Linux or macOS. Other
-Linux flavors will probably work with this role, but they haven't been tested. 
+Linux flavors will probably work with this role, but they haven't been tested.
 
 Role Variables
 --------------
