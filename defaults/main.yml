@@ -1,3 +1,6 @@
 ---
+# If true, also install and configure nix flakes
+nix_flakes: false
+
 # User to install nix for
 nix_user: "{{ ansible_user }}"
