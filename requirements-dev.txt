@@ -10,7 +10,6 @@ ansible-compat==2.1.0
     # via
     #   ansible-lint
     #   molecule
-    #   molecule-docker
 ansible-core==2.13.1
     # via
     #   ansible
@@ -98,7 +97,7 @@ molecule==4.0.0
     # via
     #   -r requirements-dev.in
     #   molecule-docker
-molecule-docker==1.1.0
+molecule-docker==2.0.0
     # via -r requirements-dev.in
 mypy-extensions==0.4.3
     # via black
