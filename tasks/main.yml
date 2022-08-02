@@ -81,7 +81,7 @@
       # Ansible's markers to indicate it's a machine-managed file.
       blockinfile:
         path: "{{ nix_config_dir.path }}/nix.conf"
-        block: "experimental-features = 'nix-command flakes'"
+        block: "experimental-features = nix-command flakes"
         insertafter: EOF
         owner: "{{ nix_user }}"
         mode: "0644"
