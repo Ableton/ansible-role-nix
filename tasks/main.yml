@@ -70,6 +70,8 @@
       # We need to use shell instead of command because of the above --login flag, since
       # nix-env isn't in the default path.
       shell: "nix-env -iA nixpkgs.nixFlakes"  # noqa command-instead-of-shell
+      environment:
+        PATH: "{{ nix_user_details.home }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       when: >
         not nix_config_file.stat.exists
         or "nix-command flakes" not in nix_config_file_contents.content | b64decode
