@@ -3,4 +3,4 @@
 nix_flakes: false
 
 # User to install nix for
-nix_user: "{{ ansible_user }}"
+nix_user: "{{ ansible_user | default(lookup('env', 'USER')) }}"
