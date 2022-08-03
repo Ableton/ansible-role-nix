@@ -37,3 +37,17 @@ def test_nix_installed(host):
     assert nix_channels.mode == 0o0644
     assert nix_channels.user == "molecule"
     assert nix_channels.group == "molecule"
+
+
+def test_nix_package_installed(host):
+    """Test that the example nix package was installed successfully."""
+    hello_package_link = host.file("/home/molecule/.nix-profile/bin/hello")
+    hello_package_file = host.file(hello_package_link.linked_to)
+
+    assert hello_package_link.is_symlink
+    assert hello_package_link.user == "molecule"
+    assert hello_package_link.group == "molecule"
+    assert hello_package_file.is_file
+    assert hello_package_file.mode == 0o0555
+    assert hello_package_file.user == "molecule"
+    assert hello_package_file.group == "molecule"
