@@ -52,13 +52,29 @@
 
 - name: Set up nix flakes
   block:
-    - name: Install nix flakes package  # noqa no-changed-when
+    - name: See if nix configuration file exists
+      stat:
+        path: "{{ nix_config_dir.path }}/nix.conf"
+      register: nix_config_file
+
+    - name: Slurp config file contents
+      slurp:
+        path: "{{ nix_config_dir.path }}/nix.conf"
+      register: nix_config_file_contents
+      when: nix_config_file.stat.exists
+
+    - name: Install nix flakes package
       become: true
       become_flags: "--login"
       become_user: "{{ nix_user }}"
       # We need to use shell instead of command because of the above --login flag, since
       # nix-env isn't in the default path.
       shell: "nix-env -iA nixpkgs.nixFlakes"  # noqa command-instead-of-shell
+      environment:
+        PATH: "{{ nix_user_details.home }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
+      when: >
+        not nix_config_file.stat.exists
+        or "nix-command flakes" not in nix_config_file_contents.content | b64decode
 
     - name: Enable nix flakes
       become: true
