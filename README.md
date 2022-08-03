@@ -4,6 +4,9 @@ Ansible role ableton.nix
 This role installs the [nix][nix] software on the given Ansible host and configures it for
 a given user. It also optionally sets up [nix flakes][nix flakes].
 
+Note that any logged-in users who want to use Nix must restart their shells after this
+role has been applied.
+
 Requirements
 ------------
 
