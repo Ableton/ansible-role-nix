@@ -1,24 +1,24 @@
 ---
 - name: Ensure Nix user exists
   become: true
-  user:
+  ansible.builtin.user:
     name: "{{ nix_user }}"
     state: present
   register: nix_user_details
 
 - name: Set fact for XDG user config dir
-  set_fact:
+  ansible.builtin.set_fact:
     xdg_user_config_dir: "{{ lookup('env', 'XDG_CONFIG_HOME') }}"
 
 # The lookup module does have a default parameter, but we can't use Jinja2 templates there
 - name: Use fallback default for XDG user config dir
-  set_fact:
+  ansible.builtin.set_fact:
     xdg_user_config_dir: "{{ nix_user_details.home }}/.config"
   when: xdg_user_config_dir == ""
 
 - name: Ensure Nix user config dir exists
   become: true
-  file:
+  ansible.builtin.file:
     path: "{{ xdg_user_config_dir }}/nix"
     state: directory
     owner: "{{ nix_user }}"
@@ -27,7 +27,7 @@
 
 - name: Ensure Nix directory exists
   become: true
-  file:
+  ansible.builtin.file:
     path: "/nix"
     owner: "{{ nix_user }}"
     state: directory
@@ -37,7 +37,7 @@
 - name: Install Nix
   block:
     - name: Download installer script
-      get_url:
+      ansible.builtin.get_url:
         url: "https://nixos.org/nix/install"
         dest: "{{ nix_script_dir }}/install_nix.sh"
         mode: "0755"
@@ -47,18 +47,19 @@
       become_user: "{{ nix_user }}"
       # TODO: Remove this suppression when ansible-lint learns to parse block conditions
       # See: https://github.com/ansible/ansible-lint/issues/1894
-      command: "{{ nix_script_dir }}/install_nix.sh"  # noqa no-changed-when
+      # noqa no-changed-when
+      ansible.builtin.command: "{{ nix_script_dir }}/install_nix.sh"
   when: nix_directory is changed  # noqa no-handler
 
 - name: Set up Nix Flakes
   block:
     - name: See if Nix configuration file exists
-      stat:
+      ansible.builtin.stat:
         path: "{{ nix_config_dir.path }}/nix.conf"
       register: nix_config_file
 
     - name: Slurp config file contents
-      slurp:
+      ansible.builtin.slurp:
         path: "{{ nix_config_dir.path }}/nix.conf"
       register: nix_config_file_contents
       when: nix_config_file.stat.exists
@@ -69,7 +70,8 @@
       become_user: "{{ nix_user }}"
       # We need to use shell instead of command because of the above --login flag, since
       # nix-env isn't in the default path.
-      shell: "nix-env -iA nixpkgs.nixFlakes"  # noqa command-instead-of-shell
+      # noqa command-instead-of-shell
+      ansible.builtin.shell: "nix-env -iA nixpkgs.nixFlakes"
       environment:
         PATH: "{{ nix_user_details.home }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       when: >
@@ -81,7 +83,7 @@
       become_user: "{{ nix_user }}"
       # Even though we are only adding a single line, we use blockinfile so we get
       # Ansible's markers to indicate it's a machine-managed file.
-      blockinfile:
+      ansible.builtin.blockinfile:
         path: "{{ nix_config_dir.path }}/nix.conf"
         block: "experimental-features = nix-command flakes"
         insertafter: EOF
