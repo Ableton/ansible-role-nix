@@ -4,15 +4,13 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible==6.1.0
-    # via -r requirements-dev.in
 ansible-compat==2.1.0
     # via
     #   ansible-lint
     #   molecule
 ansible-core==2.13.1
     # via
-    #   ansible
+    #   -r requirements-dev.in
     #   ansible-lint
 ansible-lint==6.3.0
     # via -r requirements-dev.in
