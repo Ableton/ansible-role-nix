@@ -5,6 +5,11 @@ library(identifier: 'python-utils@0.12', changelog: false)
 
 devToolsProject.run(
   setup: { data ->
+    // Temporary workaround for molecule's awful handling of roles and collections. It
+    // insists on installing everything to ~/.cache/ansible-compat, which causes problems
+    // on our CI system once it discovers that roles with different versions are there.
+    sh 'rm -rf $HOME/.cache/ansible-compat'
+
     Object venv = virtualenv.createWithPyenv('3.10.3')
     venv.run('pip install -r requirements-dev.txt')
     data['rolesPath'] = "${env.WORKSPACE}/.ansible/roles"
