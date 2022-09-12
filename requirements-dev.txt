@@ -22,8 +22,6 @@ attrs==21.2.0
     #   pytest
 binaryornot==0.4.4
     # via cookiecutter
-black==22.8.0
-    # via -r requirements-dev.in
 bracex==2.1.1
     # via wcmatch
 cerberus==1.3.2
@@ -38,7 +36,6 @@ charset-normalizer==2.0.6
     # via requests
 click==8.0.1
     # via
-    #   black
     #   click-help-colors
     #   cookiecutter
     #   molecule
@@ -60,21 +57,10 @@ enrich==1.2.7
     # via
     #   ansible-lint
     #   molecule
-flake8==4.0.1
-    # via
-    #   -r requirements-dev.in
-    #   flake8-docstrings
-    #   flake8-isort
-flake8-docstrings==1.6.0
-    # via -r requirements-dev.in
-flake8-isort==4.2.0
-    # via -r requirements-dev.in
 idna==3.2
     # via requests
 iniconfig==1.1.1
     # via pytest
-isort==5.9.3
-    # via flake8-isort
 jinja2==3.0.2
     # via
     #   ansible-core
@@ -89,16 +75,12 @@ jsonschema==4.6.0
     #   ansible-lint
 markupsafe==2.0.1
     # via jinja2
-mccabe==0.6.1
-    # via flake8
 molecule==4.0.0
     # via
     #   -r requirements-dev.in
     #   molecule-docker
 molecule-docker==2.0.0
     # via -r requirements-dev.in
-mypy-extensions==0.4.3
-    # via black
 packaging==21.0
     # via
     #   ansible-core
@@ -106,25 +88,15 @@ packaging==21.0
     #   molecule
     #   pytest
 pathspec==0.9.0
-    # via
-    #   black
-    #   yamllint
-platformdirs==2.4.0
-    # via black
+    # via yamllint
 pluggy==1.0.0
     # via
     #   molecule
     #   pytest
 py==1.10.0
     # via pytest
-pycodestyle==2.8.0
-    # via flake8
 pycparser==2.20
     # via cffi
-pydocstyle==6.1.1
-    # via flake8-docstrings
-pyflakes==2.4.0
-    # via flake8
 pygments==2.10.0
     # via rich
 pyparsing==2.4.7
@@ -132,11 +104,7 @@ pyparsing==2.4.7
 pyrsistent==0.18.1
     # via jsonschema
 pytest==6.2.5
-    # via
-    #   ansible-lint
-    #   pytest-testinfra
-pytest-testinfra==6.8.0
-    # via -r requirements-dev.in
+    # via ansible-lint
 python-dateutil==2.8.2
     # via arrow
 python-slugify==5.0.2
@@ -167,16 +135,12 @@ selinux==0.2.1
     # via molecule-docker
 six==1.16.0
     # via python-dateutil
-snowballstemmer==2.1.0
-    # via pydocstyle
 subprocess-tee==0.3.5
     # via ansible-compat
 text-unidecode==1.3
     # via python-slugify
 toml==0.10.2
     # via pytest
-tomli==1.2.1
-    # via black
 urllib3==1.26.7
     # via requests
 wcmatch==8.2
