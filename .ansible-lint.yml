@@ -2,7 +2,7 @@
 exclude_paths:
   - .ansible/roles
   - .venv
-  - molecule
+  - molecule/*/converge.yml
 parseable: true
 skip_list:
   - "empty-string-compare"
