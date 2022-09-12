@@ -67,6 +67,15 @@
           - nix_config_file.stat.gid == nix_group.gid
           - nix_config_file.stat.mode == "0644"
 
+    - name: Slurp nix config file
+      ansible.builtin.slurp:
+        src: "/home/molecule/.config/nix/nix.conf"
+      register: nix_config_file_contents
+
+    - name: Assert that nix flakes was configured correctly
+      ansible.builtin.assert:
+        that: "'nix-command flakes' in nix_config_file_contents.content | b64decode"
+
     - name: Stat nix channels directory
       ansible.builtin.stat:
         path: "/home/molecule/.nix-channels"
