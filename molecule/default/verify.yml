@@ -1,0 +1,108 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Get nix user group
+      ansible.builtin.group:
+        name: "molecule"
+      register: nix_group
+
+    - name: Assert that nix user group was created correctly
+      ansible.builtin.assert:
+        that:
+          - nix_group is not changed
+          - nix_group.name == "molecule"
+
+    - name: Get nix user
+      ansible.builtin.user:
+        name: "molecule"
+      register: nix_user
+
+    - name: Assert that nix user was created correctly
+      ansible.builtin.assert:
+        that:
+          - nix_user is not changed
+          - nix_user.name == "molecule"
+          - nix_user.group == nix_group.gid
+
+    - name: Stat nix directory
+      ansible.builtin.stat:
+        path: "/nix"
+      register: nix_dir
+
+    - name: Assert that nix directory was created correctly
+      ansible.builtin.assert:
+        that:
+          - nix_dir.stat.exists
+          - nix_dir.stat.isdir
+          - nix_dir.stat.uid == nix_user.uid
+          - nix_dir.stat.gid == 0
+          - nix_dir.stat.mode == "0755"
+
+    - name: Stat nix config directory
+      ansible.builtin.stat:
+        path: "/home/molecule/.config"
+      register: nix_config_dir
+
+    - name: Assert that nix config directory was created correctly
+      ansible.builtin.assert:
+        that:
+          - nix_config_dir.stat.exists
+          - nix_config_dir.stat.isdir
+          - nix_config_dir.stat.uid == nix_user.uid
+          - nix_config_dir.stat.gid == 0
+          - nix_config_dir.stat.mode == "0755"
+
+    - name: Stat nix config file
+      ansible.builtin.stat:
+        path: "/home/molecule/.config/nix/nix.conf"
+      register: nix_config_file
+
+    - name: Assert that nix config file was created correctly
+      ansible.builtin.assert:
+        that:
+          - nix_config_file.stat.exists
+          - nix_config_file.stat.isreg
+          - nix_config_file.stat.uid == nix_user.uid
+          - nix_config_file.stat.gid == nix_group.gid
+          - nix_config_file.stat.mode == "0644"
+
+    - name: Stat nix channels directory
+      ansible.builtin.stat:
+        path: "/home/molecule/.nix-channels"
+      register: nix_channels_dir
+
+    - name: Assert that nix channels dir was created correctly
+      ansible.builtin.assert:
+        that:
+          - nix_channels_dir.stat.exists
+          - nix_channels_dir.stat.isreg
+          - nix_channels_dir.stat.uid == nix_user.uid
+          - nix_channels_dir.stat.gid == nix_group.gid
+          - nix_channels_dir.stat.mode == "0644"
+
+    - name: Stat nix hello package
+      ansible.builtin.stat:
+        path: "/home/molecule/.nix-profile/bin/hello"
+      register: nix_hello
+
+    - name: Assert that nix hello package was installed correctly
+      ansible.builtin.assert:
+        that:
+          - nix_hello.stat.exists
+          - nix_hello.stat.islnk
+          - nix_hello.stat.uid == nix_user.uid
+          - nix_hello.stat.gid == nix_group.gid
+
+    - name: Stat nix hello binary file
+      ansible.builtin.stat:
+        path: "{{ nix_hello.stat.lnk_source }}"
+      register: nix_hello_bin
+
+    - name: Assert that nix hello binary has correct ownership
+      ansible.builtin.assert:
+        that:
+          - nix_hello_bin.stat.exists
+          - nix_hello_bin.stat.uid == nix_user.uid
+          - nix_hello_bin.stat.gid == nix_group.gid
+          - nix_hello_bin.stat.mode == "0555"
