@@ -10,7 +10,7 @@ devToolsProject.run(
     // on our CI system once it discovers that roles with different versions are there.
     sh 'rm -rf $HOME/.cache/ansible-compat'
 
-    Object venv = virtualenv.createWithPyenv('3.10.3')
+    Object venv = virtualenv.createWithPyenv(readFile('.python-version'))
     venv.run('pip install -r requirements-dev.txt')
     data['rolesPath'] = "${env.WORKSPACE}/.ansible/roles"
     venv.run("ansible-galaxy install --no-deps --roles-path ${data.rolesPath}" +
