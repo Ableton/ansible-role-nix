@@ -64,14 +64,14 @@
       register: nix_config_file_contents
       when: nix_config_file.stat.exists
 
-    - name: Install Nix Flakes package
+    - name: Install Nix stable package
       become: true
       become_flags: "--login"
       become_user: "{{ nix_user }}"
       # We need to use shell instead of command because of the above --login flag, since
       # nix-env isn't in the default path.
       # noqa command-instead-of-shell
-      ansible.builtin.shell: "nix-env -iA nixpkgs.nixFlakes"
+      ansible.builtin.shell: "nix-env -iA nixpkgs.nixVersions.stable"
       environment:
         PATH: "{{ nix_user_details.home }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       when: >
