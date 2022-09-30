@@ -79,7 +79,7 @@ molecule==4.0.0
     # via
     #   -r requirements-dev.in
     #   molecule-docker
-molecule-docker==2.0.0
+molecule-docker==2.1.0
     # via -r requirements-dev.in
 packaging==21.0
     # via
