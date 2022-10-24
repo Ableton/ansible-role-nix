@@ -1,0 +1,31 @@
+---
+on:  # yamllint disable-line rule:truthy
+  pull_request_target:
+    types: [opened, reopened]
+    paths:
+      - .python-version
+
+permissions:
+  pull-requests: write
+
+jobs:
+  update-python:
+    runs-on: ubuntu-latest
+    name: Update Python version used by renovate
+    steps:
+      - name: Post a reminder to update the Python version used by renovate
+        shell: python
+        # yamllint disable rule:line-length
+        run: |
+          import requests
+
+          PR_NUM = ${{ github.event.pull_request.number }}
+          REPO_SLUG = ${{ github.repository }}
+
+          r = requests.post(
+            f"https://api.github.com/repos/{REPO_SLUG}/issues/{PR_NUM}/comments",
+            headers={"Authorization": "token ${{ github.token }}"},
+            json={"body": "Don't forget to update the Python version in `.github/renovate.json`"},
+          )
+          r.raise_for_status()
+          print(f"Posted comment on pull request {PR_NUM}")
