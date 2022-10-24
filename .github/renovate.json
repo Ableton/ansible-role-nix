@@ -1,0 +1,7 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "constraints": {"python": "3.10.6"},
+  "extends": ["config:base"],
+  "enabledManagers": ["ansible-galaxy", "pip-compile"],
+  "pip-compile": {"fileMatch": ["^requirements-dev\\.in$"]}
+}
