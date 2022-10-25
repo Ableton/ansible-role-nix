@@ -22,7 +22,7 @@ devToolsProject.run(
       'ansible-lint': {
         data.venv.run(
           label: 'ansible-lint',
-          script: 'ansible-lint --offline -c .ansible-lint.yml',
+          script: 'ansible-lint --strict --offline -c .ansible-lint.yml',
         )
       },
       groovylint: { groovylint.checkSingleFile(path: './Jenkinsfile') },
