@@ -35,6 +35,7 @@
   register: nix_directory
 
 - name: Install Nix
+  when: nix_directory is changed  # noqa no-handler
   block:
     - name: Download installer script
       ansible.builtin.get_url:
@@ -49,9 +50,9 @@
       # See: https://github.com/ansible/ansible-lint/issues/1894
       # noqa no-changed-when
       ansible.builtin.command: "{{ nix_script_dir }}/install_nix.sh"
-  when: nix_directory is changed  # noqa no-handler
 
 - name: Set up Nix Flakes
+  when: nix_flakes  # noqa no-handler
   block:
     - name: See if Nix configuration file exists
       ansible.builtin.stat:
@@ -91,4 +92,3 @@
         mode: "0644"
         create: true
         state: present
-  when: nix_flakes  # noqa no-handler
