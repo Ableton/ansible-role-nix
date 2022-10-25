@@ -20,19 +20,10 @@ devToolsProject.run(
   test: { data ->
     parallel(failFast: false,
       'ansible-lint': {
-        String stdout = data.venv.run(
+        data.venv.run(
           label: 'ansible-lint',
-          returnStdout: true,
           script: 'ansible-lint --offline -c .ansible-lint.yml',
         )
-
-        // If only warnings are found, ansible-lint will exit with code 0 but still write
-        // an error summary to stdout. It's not possible to treat warnings as errors, and
-        // likely will never be. See:
-        // https://github.com/ansible-community/ansible-lint/issues/236
-        if (stdout) {
-          error 'ansible-lint exited with warnings, check the output of the previous step'
-        }
       },
       groovylint: { groovylint.checkSingleFile(path: './Jenkinsfile') },
       molecule: {
