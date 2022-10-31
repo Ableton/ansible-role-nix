@@ -12,7 +12,7 @@ ansible-core==2.13.5
     # via
     #   -r requirements-dev.in
     #   ansible-lint
-ansible-lint==6.8.2
+ansible-lint==6.8.4
     # via -r requirements-dev.in
 arrow==1.2.3
     # via jinja2-time
@@ -71,7 +71,7 @@ jsonschema==4.16.0
     #   molecule
 markupsafe==2.1.1
     # via jinja2
-molecule==4.0.2
+molecule==4.0.3
     # via
     #   -r requirements-dev.in
     #   molecule-docker
@@ -99,7 +99,7 @@ pygments==2.13.0
     # via rich
 pyparsing==3.0.9
     # via packaging
-pyrsistent==0.18.1
+pyrsistent==0.19.1
     # via jsonschema
 python-dateutil==2.8.2
     # via arrow
