@@ -12,9 +12,22 @@ devToolsProject.run(
 
     Object venv = virtualenv.createWithPyenv(readFile('.python-version'))
     venv.run('pip install -r requirements-dev.txt')
+    data['collectionsPath'] = "${env.WORKSPACE}/.ansible/collections"
+    venv.run('ansible-galaxy collection install' +
+      " --collections-path ${data.collectionsPath}" +
+      ' --requirements-file requirements.yml')
     data['rolesPath'] = "${env.WORKSPACE}/.ansible/roles"
-    venv.run("ansible-galaxy install --no-deps --roles-path ${data.rolesPath}" +
-      " git+https://github.com/${params.JENKINS_REPO_SLUG},${params.JENKINS_COMMIT}")
+    venv.run('ansible-galaxy install' +
+      " --roles-path ${data.rolesPath}" +
+      ' --role-file requirements.yml')
+    dir('.ansible/roles') {
+      // Create a symlink for the current role name in the roles path. This is necessary
+      // because our CI system checks out all repositories to a directory named
+      // "workspace", which confuses Molecule. Since Molecule determines the role's name
+      // based on the current working directory, we need another way to tell it where to
+      // find the role.
+      sh "ln -s ../.. ${env.JENKINS_REPO_SLUG.split('/')[1]}"
+    }
     data['venv'] = venv
   },
   test: { data ->
@@ -27,7 +40,10 @@ devToolsProject.run(
       },
       groovylint: { groovylint.checkSingleFile(path: './Jenkinsfile') },
       molecule: {
-        withEnv(["ANSIBLE_ROLES_PATH=${data.rolesPath}"]) {
+        withEnv([
+          "ANSIBLE_COLLECTIONS_PATH=${data.collectionsPath}",
+          "ANSIBLE_ROLES_PATH=${data.rolesPath}",
+        ]) {
           data.venv.run('molecule --debug test')
         }
       },
