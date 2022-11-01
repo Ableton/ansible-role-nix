@@ -20,7 +20,7 @@ jobs:
           import requests
 
           PR_NUM = ${{ github.event.pull_request.number }}
-          REPO_SLUG = ${{ github.repository }}
+          REPO_SLUG = "${{ github.repository }}"
 
           r = requests.post(
             f"https://api.github.com/repos/{REPO_SLUG}/issues/{PR_NUM}/comments",
