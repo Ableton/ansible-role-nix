@@ -1,6 +1,6 @@
 library(identifier: 'ableton-utils@0.22', changelog: false)
 library(identifier: 'groovylint@0.13', changelog: false)
-library(identifier: 'python-utils@0.12', changelog: false)
+library(identifier: 'python-utils@0.13', changelog: false)
 
 
 devToolsProject.run(
@@ -10,7 +10,7 @@ devToolsProject.run(
     // on our CI system once it discovers that roles with different versions are there.
     sh 'rm -rf $HOME/.cache/ansible-compat'
 
-    Object venv = virtualenv.createWithPyenv(readFile('.python-version'))
+    Object venv = pyenv.createVirtualEnv(readFile('.python-version'))
     venv.run('pip install -r requirements-dev.txt')
     data['rolesPath'] = "${env.WORKSPACE}/.ansible/roles"
     venv.run("ansible-galaxy install --no-deps --roles-path ${data.rolesPath}" +
