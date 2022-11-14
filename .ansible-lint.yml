@@ -1,6 +1,6 @@
 ---
 exclude_paths:
-  - .ansible/roles
+  - .ansible
   - .venv
   - molecule/*/converge.yml
 parseable: true
