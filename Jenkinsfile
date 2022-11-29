@@ -6,10 +6,7 @@ library(identifier: 'python-utils@0.13', changelog: false)
 devToolsProject.run(
   setup: { data ->
     Object venv = pyenv.createVirtualEnv(readFile('.python-version'))
-    venv.inside {
-      sh 'pip install -r requirements-dev.txt'
-      ansibleUtils.galaxyInstall()
-    }
+    venv.run('pip install -r requirements-dev.txt')
     data['venv'] = venv
   },
   test: { data ->
