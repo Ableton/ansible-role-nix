@@ -88,7 +88,7 @@ packaging==23.0
     #   ansible-lint
     #   docker
     #   molecule
-pathspec==0.10.3
+pathspec==0.11.0
     # via
     #   black
     #   yamllint
@@ -104,7 +104,7 @@ pyrsistent==0.19.3
     # via jsonschema
 python-dateutil==2.8.2
     # via arrow
-python-slugify==7.0.0
+python-slugify==8.0.0
     # via cookiecutter
 pyyaml==6.0
     # via
@@ -121,7 +121,7 @@ requests==2.28.2
     #   molecule-docker
 resolvelib==0.8.1
     # via ansible-core
-rich==13.2.0
+rich==13.3.1
     # via
     #   ansible-lint
     #   enrich
@@ -146,7 +146,7 @@ urllib3==1.26.14
     #   requests
 wcmatch==8.4.1
     # via ansible-lint
-websocket-client==1.4.2
+websocket-client==1.5.0
     # via docker
 yamllint==1.29.0
     # via ansible-lint
