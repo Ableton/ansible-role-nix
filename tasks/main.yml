@@ -46,10 +46,8 @@
     - name: Run installer script
       become: true
       become_user: "{{ nix_user }}"
-      # TODO: Remove this suppression when ansible-lint learns to parse block conditions
-      # See: https://github.com/ansible/ansible-lint/issues/1894
-      # noqa no-changed-when
       ansible.builtin.command: "{{ nix_script_dir }}/install_nix.sh"
+      changed_when: true
 
 - name: Set up Nix Flakes
   when: nix_flakes  # noqa no-handler
@@ -73,6 +71,7 @@
       # nix-env isn't in the default path.
       # noqa command-instead-of-shell
       ansible.builtin.shell: "nix-env -iA nixpkgs.nixVersions.stable"
+      changed_when: true
       environment:
         PATH: "{{ nix_user_details.home }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       when: >
