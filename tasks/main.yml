@@ -25,6 +25,12 @@
     mode: "0755"
   register: nix_config_dir
 
+- name: Check if Nix directory exists
+  ansible.builtin.stat:
+    path: "/nix"
+  when: ansible_os_family == "Darwin"
+  register: nix_directory_mac
+
 - name: Ensure Nix directory exists
   become: true
   ansible.builtin.file:
@@ -32,7 +38,15 @@
     owner: "{{ nix_user }}"
     state: directory
     mode: "0755"
+  when: ansible_os_family != "Darwin"
   register: nix_directory
+
+- name: Set should_install_nix fact
+  ansible.builtin.set_fact:
+    should_install_nix: true
+    when: >
+      (ansible_os_family != "Darwin" and nix_directory is changed) or
+      (ansible_os_family == "Darwin" and not nix_directory_mac.stat.exists)
 
 - name: Install Nix
   when: nix_directory is changed  # noqa no-handler
