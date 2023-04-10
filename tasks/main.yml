@@ -41,15 +41,10 @@
   when: ansible_os_family != "Darwin"
   register: nix_directory
 
-- name: Set should_install_nix fact
-  ansible.builtin.set_fact:
-    should_install_nix: true
-    when: >
-      (ansible_os_family != "Darwin" and nix_directory is changed) or
-      (ansible_os_family == "Darwin" and not nix_directory_mac.stat.exists)
-
 - name: Install Nix
-  when: should_install_nix  # noqa no-handler
+  when: >
+    (ansible_os_family != "Darwin" and nix_directory is changed) or
+    (ansible_os_family == "Darwin" and not nix_directory_mac.stat.exists)
   block:
     - name: Download installer script
       ansible.builtin.get_url:
