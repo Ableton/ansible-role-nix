@@ -1,3 +1,7 @@
 ---
 # Scratch directory to use for downloading the installation script
 nix_script_dir: "/tmp"
+
+# Fact that will be set to true if Nix should be installed. Can manually be set to true to
+# force installation.
+should_install_nix: false
