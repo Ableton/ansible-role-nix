@@ -11,7 +11,7 @@ ansible-core==2.14.4
     #   -r requirements-dev.in
     #   ansible-compat
     #   ansible-lint
-ansible-lint==6.14.3
+ansible-lint==6.14.4
     # via -r requirements-dev.in
 arrow==1.2.3
     # via jinja2-time
@@ -49,7 +49,7 @@ docker==6.0.1
     # via molecule-docker
 enrich==1.2.7
     # via molecule
-filelock==3.10.7
+filelock==3.11.0
     # via ansible-lint
 idna==3.4
     # via requests
@@ -88,9 +88,8 @@ packaging==23.0
     #   black
     #   docker
     #   molecule
-pathspec==0.11.0
+pathspec==0.11.1
     # via
-    #   ansible-lint
     #   black
     #   yamllint
 platformdirs==3.2.0
