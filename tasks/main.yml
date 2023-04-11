@@ -44,9 +44,9 @@
 - name: Set should_install_nix fact
   ansible.builtin.set_fact:
     should_install_nix: true
-    when: >
-      (ansible_os_family != "Darwin" and nix_directory is changed) or
-      (ansible_os_family == "Darwin" and not nix_directory_mac.stat.exists)
+  when: >
+    (ansible_os_family != "Darwin" and nix_directory is changed) or
+    (ansible_os_family == "Darwin" and not nix_directory_mac.stat.exists)
 
 - name: Install Nix
   when: nix_directory is changed  # noqa no-handler
