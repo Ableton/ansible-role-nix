@@ -49,7 +49,7 @@
     (ansible_os_family == "Darwin" and not nix_directory_mac.stat.exists)
 
 - name: Install Nix
-  when: nix_directory is changed  # noqa no-handler
+  when: should_install_nix  # noqa no-handler
   block:
     - name: Download installer script
       ansible.builtin.get_url:
