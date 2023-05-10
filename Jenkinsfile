@@ -1,9 +1,10 @@
-library(identifier: 'ableton-utils@0.22', changelog: false)
+library(identifier: 'ableton-utils@0.23', changelog: false)
 library(identifier: 'groovylint@0.13', changelog: false)
 library(identifier: 'python-utils@0.13', changelog: false)
 
 
 devToolsProject.run(
+  defaultBranch: 'main',
   setup: { data ->
     Object venv = pyenv.createVirtualEnv(readFile('.python-version'))
     venv.run('pip install -r requirements-dev.txt')
@@ -24,7 +25,6 @@ devToolsProject.run(
       )
     }
   },
-  deployWhen: { devToolsProject.shouldDeploy(defaultBranch: 'main') },
   deploy: { data ->
     data.venv.inside { ansibleUtils.publishRole('ansible-galaxy-api-key') }
   },
