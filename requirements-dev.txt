@@ -115,7 +115,7 @@ pyyaml==6.0
     #   cookiecutter
     #   molecule
     #   yamllint
-requests==2.30.0
+requests==2.31.0
     # via
     #   cookiecutter
     #   docker
