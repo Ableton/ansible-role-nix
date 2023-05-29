@@ -127,7 +127,7 @@ rich==13.3.5
     #   ansible-lint
     #   enrich
     #   molecule
-ruamel-yaml==0.17.26
+ruamel-yaml==0.17.28
     # via ansible-lint
 ruamel-yaml-clib==0.2.7
     # via ruamel-yaml
@@ -151,5 +151,5 @@ wcmatch==8.4.1
     # via ansible-lint
 websocket-client==1.5.2
     # via docker
-yamllint==1.31.0
+yamllint==1.32.0
     # via ansible-lint
