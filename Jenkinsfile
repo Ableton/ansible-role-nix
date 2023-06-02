@@ -7,7 +7,10 @@ devToolsProject.run(
   defaultBranch: 'main',
   setup: { data ->
     Object venv = pyenv.createVirtualEnv(readFile('.python-version'))
-    venv.run('pip install -r requirements-dev.txt')
+    venv.inside {
+      sh 'pip install -r requirements-dev.txt'
+      ansibleUtils.galaxyInstall()
+    }
     data['venv'] = venv
   },
   test: { data ->

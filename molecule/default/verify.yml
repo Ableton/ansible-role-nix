@@ -115,3 +115,12 @@
           - nix_hello_bin.stat.uid == nix_user.uid
           - nix_hello_bin.stat.gid == nix_group.gid
           - nix_hello_bin.stat.mode == "0555"
+
+    - name: Stat nix store inside bind mount directory
+      ansible.builtin.stat:
+        path: "/new/nix/store"
+      register: nix_bind_store_dir
+
+    - name: Assert that nix bind mount directory is present
+      ansible.builtin.assert:
+        that: nix_bind_store_dir.stat.exists

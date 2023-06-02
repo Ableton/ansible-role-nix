@@ -4,6 +4,7 @@
   vars:
     nix_flakes: true
     nix_user: molecule
+    nix_bind_mount: "/new/nix"
 
   roles:
     - ansible-role-nix

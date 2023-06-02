@@ -1,4 +1,7 @@
 ---
+# If non empty, the path where /nix should be bind mount to.
+nix_bind_mount: ""
+
 # If true, also install and configure nix flakes
 nix_flakes: false
 
