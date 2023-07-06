@@ -13,7 +13,7 @@
     - name: Get list of installed Nix packages
       become: true
       become_user: "{{ nix_user }}"
-      shell: "nix-env --query --installed"
+      ansible.builtin.command: "nix-env --query --installed"
       environment:
         PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       changed_when: false
@@ -22,29 +22,30 @@
     - name: Try to install a Nix package
       become: true
       become_user: "{{ nix_user }}"
-      shell: "nix-env -i hello"
+      ansible.builtin.command: "nix-env -i hello"
       environment:
         PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       when: "'hello' not in nix_packages.stdout"
+      changed_when: true
 
     - name: Try to run the hello Nix package
       become: true
       become_user: "{{ nix_user }}"
-      command: "hello"
+      ansible.builtin.command: "hello"
       environment:
         PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       changed_when: false
       register: hello_output
 
     - name: Verify output of the hello program
-      fail:
+      ansible.builtin.fail:
         msg: "The hello program did not return the expected output!"
       when: "hello_output.stdout != 'Hello, world!'"
 
     - name: Try to use Nix Flakes
       become: true
       become_user: "{{ nix_user }}"
-      shell: "nix flake metadata github:edolstra/dwarffs"
+      ansible.builtin.command: "nix flake metadata github:edolstra/dwarffs"
       environment:
         PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       changed_when: false
