@@ -4,6 +4,7 @@ pull_requests:
 
 pushes:
   - main
+  - nre/main/proper-role-names
 
 notifications:
   - name: Build failures on the main branch
