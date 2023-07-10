@@ -7,7 +7,7 @@
     nix_bind_mount: "/new/nix"
 
   roles:
-    - ansible-role-nix
+    - ableton.nix
 
   tasks:
     - name: Get list of installed Nix packages
