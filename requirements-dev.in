@@ -3,4 +3,4 @@ ansible-lint
 molecule
 molecule-plugins[docker]
 # https://github.com/docker/docker-py/issues/3113
-urllib3<2
+urllib3<3
