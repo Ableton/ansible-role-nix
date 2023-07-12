@@ -154,8 +154,9 @@ text-unidecode==1.3
     # via python-slugify
 tomli==2.0.1
     # via black
-urllib3==2.0.3
+urllib3==1.26.16
     # via
+    #   -r requirements-dev.in
     #   docker
     #   requests
 wcmatch==8.4.1
