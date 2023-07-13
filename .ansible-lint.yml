@@ -1,6 +1,7 @@
 ---
 exclude_paths:
   - .ansible
+  - .direnv
   - .venv
 parseable: true
 skip_list:
