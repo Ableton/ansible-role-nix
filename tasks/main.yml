@@ -9,12 +9,13 @@
 - name: Set fact for XDG user config dir
   ansible.builtin.set_fact:
     xdg_user_config_dir: "{{ lookup('env', 'XDG_CONFIG_HOME') }}"
+  when: nix_user == lookup('env', 'USER')
 
 # The lookup module does have a default parameter, but we can't use Jinja2 templates there
 - name: Use fallback default for XDG user config dir
   ansible.builtin.set_fact:
     xdg_user_config_dir: "{{ nix_user_details.home }}/.config"
-  when: xdg_user_config_dir == ""
+  when: xdg_user_config_dir is not defined
 
 - name: Ensure Nix user config dir exists
   become: true
