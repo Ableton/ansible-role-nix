@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==4.1.8
+ansible-compat==4.1.10
     # via
     #   ansible-lint
     #   molecule
@@ -14,13 +14,13 @@ ansible-core==2.15.3
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==6.18.0
+ansible-lint==6.19.0
     # via -r requirements-dev.in
 attrs==23.1.0
     # via
     #   jsonschema
     #   referencing
-black==23.7.0
+black==23.9.1
     # via ansible-lint
 bracex==2.4
     # via wcmatch
@@ -118,7 +118,7 @@ rich==13.5.2
     #   ansible-lint
     #   enrich
     #   molecule
-rpds-py==0.10.0
+rpds-py==0.10.2
     # via
     #   jsonschema
     #   referencing
@@ -135,7 +135,9 @@ subprocess-tee==0.4.1
 tomli==2.0.1
     # via black
 typing-extensions==4.7.1
-    # via filelock
+    # via
+    #   black
+    #   filelock
 urllib3==1.26.16
     # via
     #   -r requirements-dev.in
