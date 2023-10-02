@@ -14,7 +14,7 @@ ansible-core==2.15.4
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==6.20.0
+ansible-lint==6.20.2
     # via -r requirements-dev.in
 attrs==23.1.0
     # via
@@ -26,9 +26,9 @@ bracex==2.4
     # via wcmatch
 certifi==2023.7.22
     # via requests
-cffi==1.15.1
+cffi==1.16.0
     # via cryptography
-charset-normalizer==3.2.0
+charset-normalizer==3.3.0
     # via requests
 click==8.1.7
     # via
@@ -74,7 +74,7 @@ molecule-plugins[docker]==23.5.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
-packaging==23.1
+packaging==23.2
     # via
     #   ansible-compat
     #   ansible-core
@@ -113,7 +113,7 @@ requests==2.31.0
     #   molecule-plugins
 resolvelib==1.0.1
     # via ansible-core
-rich==13.5.3
+rich==13.6.0
     # via
     #   ansible-lint
     #   enrich
@@ -122,7 +122,7 @@ rpds-py==0.10.3
     # via
     #   jsonschema
     #   referencing
-ruamel-yaml==0.17.32
+ruamel-yaml==0.17.33
     # via ansible-lint
 ruamel-yaml-clib==0.2.7
     # via ruamel-yaml
