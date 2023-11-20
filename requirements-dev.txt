@@ -24,7 +24,7 @@ black==23.11.0
     # via ansible-lint
 bracex==2.4
     # via wcmatch
-certifi==2023.7.22
+certifi==2023.11.17
     # via requests
 cffi==1.16.0
     # via cryptography
@@ -35,7 +35,7 @@ click==8.1.7
     #   black
     #   click-help-colors
     #   molecule
-click-help-colors==0.9.3
+click-help-colors==0.9.4
     # via molecule
 cryptography==41.0.5
     # via ansible-core
@@ -53,12 +53,12 @@ jinja2==3.1.2
     # via
     #   ansible-core
     #   molecule
-jsonschema==4.19.2
+jsonschema==4.20.0
     # via
     #   ansible-compat
     #   ansible-lint
     #   molecule
-jsonschema-specifications==2023.7.1
+jsonschema-specifications==2023.11.1
     # via jsonschema
 markdown-it-py==3.0.0
     # via rich
@@ -93,7 +93,7 @@ pluggy==1.3.0
     # via molecule
 pycparser==2.21
     # via cffi
-pygments==2.16.1
+pygments==2.17.1
     # via rich
 pyyaml==6.0.1
     # via
@@ -102,7 +102,7 @@ pyyaml==6.0.1
     #   ansible-lint
     #   molecule
     #   yamllint
-referencing==0.30.2
+referencing==0.31.0
     # via
     #   jsonschema
     #   jsonschema-specifications
@@ -113,12 +113,12 @@ requests==2.31.0
     #   molecule-plugins
 resolvelib==1.0.1
     # via ansible-core
-rich==13.6.0
+rich==13.7.0
     # via
     #   ansible-lint
     #   enrich
     #   molecule
-rpds-py==0.12.0
+rpds-py==0.13.0
     # via
     #   jsonschema
     #   referencing
