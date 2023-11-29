@@ -37,7 +37,7 @@ click==8.1.7
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==41.0.5
+cryptography==41.0.6
     # via ansible-core
 distro==1.8.0
     # via selinux
