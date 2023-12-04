@@ -14,7 +14,7 @@ ansible-core==2.16.0
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==6.22.0
+ansible-lint==6.22.1
     # via -r requirements-dev.in
 attrs==23.1.0
     # via
@@ -37,7 +37,7 @@ click==8.1.7
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==41.0.6
+cryptography==41.0.7
     # via ansible-core
 distro==1.8.0
     # via selinux
@@ -58,7 +58,7 @@ jsonschema==4.20.0
     #   ansible-compat
     #   ansible-lint
     #   molecule
-jsonschema-specifications==2023.11.1
+jsonschema-specifications==2023.11.2
     # via jsonschema
 markdown-it-py==3.0.0
     # via rich
@@ -102,7 +102,7 @@ pyyaml==6.0.1
     #   ansible-lint
     #   molecule
     #   yamllint
-referencing==0.31.0
+referencing==0.31.1
     # via
     #   jsonschema
     #   jsonschema-specifications
@@ -118,7 +118,7 @@ rich==13.7.0
     #   ansible-lint
     #   enrich
     #   molecule
-rpds-py==0.13.1
+rpds-py==0.13.2
     # via
     #   jsonschema
     #   referencing
@@ -145,7 +145,7 @@ wcmatch==8.5
     # via
     #   ansible-lint
     #   molecule
-websocket-client==1.6.4
+websocket-client==1.7.0
     # via docker
 yamllint==1.33.0
     # via ansible-lint
