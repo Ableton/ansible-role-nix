@@ -116,6 +116,18 @@
           - nix_hello_bin.stat.gid == nix_group.gid
           - nix_hello_bin.stat.mode == "0555"
 
+    - name: Read mount points
+      ansible.builtin.slurp:
+        src: "/proc/mounts"
+      register: proc_mounts
+
+    - name: Verify overlay mount for /nix
+      ansible.builtin.assert:
+        fail_msg: "/proc/mounts did not contain an overlay for /new/nix"
+        that:
+          - "{{ proc_mounts['content'] | b64decode \
+            | regex_search('overlay /new/nix') is not none }}"
+
     - name: Stat nix store inside bind mount directory
       ansible.builtin.stat:
         path: "/new/nix/store"
