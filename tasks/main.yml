@@ -71,8 +71,8 @@
     - name: "Bind mount /nix to {{ nix_bind_mount }}"
       become: true
       ansible.posix.mount:
-        path: "{{ nix_bind_mount }}"
-        src: "/nix"
+        path: "/nix"
+        src: "{{ nix_bind_mount }}"
         opts: bind
         state: mounted
         fstype: none

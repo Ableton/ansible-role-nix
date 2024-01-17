@@ -123,10 +123,10 @@
 
     - name: Verify overlay mount for /nix
       ansible.builtin.assert:
-        fail_msg: "/proc/mounts did not contain an overlay for /new/nix"
+        fail_msg: "/proc/mounts did not contain an overlay for /nix"
         that:
           - "{{ proc_mounts['content'] | b64decode \
-            | regex_search('overlay /new/nix') is not none }}"
+            | regex_search('overlay /nix') is not none }}"
 
     - name: Stat nix store inside bind mount directory
       ansible.builtin.stat:
