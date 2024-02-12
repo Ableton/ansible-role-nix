@@ -14,7 +14,7 @@ ansible-core==2.16.3
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==6.22.2
+ansible-lint==24.2.0
     # via -r requirements-dev.in
 attrs==23.2.0
     # via
@@ -66,11 +66,11 @@ markupsafe==2.1.5
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-molecule==6.0.3
+molecule==24.2.0
     # via
     #   -r requirements-dev.in
     #   molecule-plugins
-molecule-plugins[docker]==23.5.0
+molecule-plugins[docker]==23.5.3
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
@@ -121,7 +121,7 @@ rpds-py==0.17.1
     # via
     #   jsonschema
     #   referencing
-ruamel-yaml==0.18.5
+ruamel-yaml==0.18.6
     # via ansible-lint
 ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
@@ -144,5 +144,5 @@ wcmatch==8.5
     # via
     #   ansible-lint
     #   molecule
-yamllint==1.33.0
+yamllint==1.34.0
     # via ansible-lint
