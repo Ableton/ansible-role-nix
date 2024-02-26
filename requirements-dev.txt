@@ -37,7 +37,7 @@ click==8.1.7
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==42.0.4
+cryptography==42.0.5
     # via ansible-core
 distro==1.9.0
     # via selinux
@@ -133,14 +133,14 @@ subprocess-tee==0.4.1
     #   ansible-lint
 tomli==2.0.1
     # via black
-typing-extensions==4.9.0
+typing-extensions==4.10.0
     # via black
 urllib3==1.26.18
     # via
     #   -r requirements-dev.in
     #   docker
     #   requests
-wcmatch==8.5
+wcmatch==8.5.1
     # via
     #   ansible-lint
     #   molecule
