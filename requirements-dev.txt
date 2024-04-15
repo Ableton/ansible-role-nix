@@ -14,13 +14,13 @@ ansible-core==2.16.5
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==24.2.1
+ansible-lint==24.2.2
     # via -r requirements-dev.in
 attrs==23.2.0
     # via
     #   jsonschema
     #   referencing
-black==24.3.0
+black==24.4.0
     # via ansible-lint
 bracex==2.4
     # via wcmatch
@@ -45,7 +45,7 @@ docker==7.0.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.13.3
+filelock==3.13.4
     # via ansible-lint
 idna==3.7
     # via requests
@@ -66,7 +66,7 @@ markupsafe==2.1.5
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-molecule==24.2.0
+molecule==24.2.1
     # via
     #   -r requirements-dev.in
     #   molecule-plugins
