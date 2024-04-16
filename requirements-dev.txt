@@ -8,7 +8,7 @@ ansible-compat==4.1.11
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.16.5
+ansible-core==2.16.6
     # via
     #   -r requirements-dev.in
     #   ansible-compat
