@@ -89,7 +89,7 @@ pathspec==0.12.1
     #   yamllint
 platformdirs==4.2.0
     # via black
-pluggy==1.4.0
+pluggy==1.5.0
     # via molecule
 pycparser==2.22
     # via cffi
