@@ -4,7 +4,7 @@
 #
 #    pip-compile --no-emit-index-url --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==24.5.1
+ansible-compat==24.6.0
     # via
     #   ansible-lint
     #   molecule
@@ -24,7 +24,7 @@ black==24.4.2
     # via ansible-lint
 bracex==2.4
     # via wcmatch
-certifi==2024.2.2
+certifi==2024.6.2
     # via requests
 cffi==1.16.0
     # via cryptography
@@ -144,5 +144,5 @@ wcmatch==8.5.2
     #   molecule
 yamllint==1.35.1
     # via ansible-lint
-zipp==3.19.0
+zipp==3.19.1
     # via importlib-metadata
