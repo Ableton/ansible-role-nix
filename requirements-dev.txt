@@ -4,7 +4,7 @@
 #
 #    pip-compile --no-emit-index-url --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==24.6.0
+ansible-compat==24.6.1
     # via
     #   ansible-lint
     #   molecule
@@ -14,7 +14,7 @@ ansible-core==2.17.0
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==24.5.0
+ansible-lint==24.6.0
     # via -r requirements-dev.in
 attrs==23.2.0
     # via
@@ -37,7 +37,7 @@ click==8.1.7
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==42.0.7
+cryptography==42.0.8
     # via ansible-core
 distro==1.9.0
     # via selinux
@@ -68,7 +68,7 @@ markupsafe==2.1.5
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-molecule==24.2.1
+molecule==24.6.0
     # via
     #   -r requirements-dev.in
     #   molecule-plugins
@@ -76,7 +76,7 @@ molecule-plugins[docker]==23.5.3
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
-packaging==24.0
+packaging==24.1
     # via
     #   ansible-compat
     #   ansible-core
@@ -144,5 +144,5 @@ wcmatch==8.5.2
     #   molecule
 yamllint==1.35.1
     # via ansible-lint
-zipp==3.19.1
+zipp==3.19.2
     # via importlib-metadata
