@@ -5,4 +5,4 @@ molecule-plugins[docker]
 # https://github.com/docker/docker-py/issues/3113
 urllib3<2
 # TODO: Remove this once Molecule has been fixed to work with requests >2.31
-requests==2.31.0
+requests==2.32.2
