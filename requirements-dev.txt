@@ -109,7 +109,6 @@ referencing==0.35.1
     #   jsonschema-specifications
 requests==2.31.0
     # via
-    #   -r requirements-dev.in
     #   docker
     #   molecule-plugins
 resolvelib==1.0.1
@@ -135,7 +134,6 @@ subprocess-tee==0.4.2
     #   ansible-lint
 urllib3==1.26.19
     # via
-    #   -r requirements-dev.in
     #   docker
     #   requests
 wcmatch==8.5.2
