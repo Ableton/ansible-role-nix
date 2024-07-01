@@ -2,3 +2,5 @@ ansible-core
 ansible-lint
 molecule
 molecule-plugins[docker]
+# TODO: Remove this once Molecule has been fixed to work with requests >2.31
+requests==2.31.0
