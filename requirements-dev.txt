@@ -24,7 +24,7 @@ black==24.4.2
     # via ansible-lint
 bracex==2.4
     # via wcmatch
-certifi==2024.6.2
+certifi==2024.7.4
     # via requests
 cffi==1.16.0
     # via cryptography
