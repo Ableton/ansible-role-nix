@@ -26,7 +26,7 @@ bracex==2.5
     # via wcmatch
 certifi==2024.8.30
     # via requests
-cffi==1.17.0
+cffi==1.17.1
     # via cryptography
 charset-normalizer==3.3.2
     # via requests
@@ -37,7 +37,7 @@ click==8.1.7
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==43.0.0
+cryptography==43.0.1
     # via ansible-core
 distro==1.9.0
     # via selinux
@@ -45,7 +45,7 @@ docker==7.1.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.15.4
+filelock==3.16.0
     # via ansible-lint
 idna==3.8
     # via requests
@@ -88,7 +88,7 @@ pathspec==0.12.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.2.2
+platformdirs==4.3.2
     # via black
 pluggy==1.5.0
     # via molecule
