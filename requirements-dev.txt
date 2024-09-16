@@ -4,17 +4,17 @@
 #
 #    pip-compile --no-emit-index-url --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==24.8.0
+ansible-compat==24.9.0
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.17.3
+ansible-core==2.17.4
     # via
     #   -r requirements-dev.in
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==24.7.0
+ansible-lint==24.9.0
     # via -r requirements-dev.in
 attrs==24.2.0
     # via
@@ -47,9 +47,9 @@ enrich==1.2.7
     # via molecule
 filelock==3.16.0
     # via ansible-lint
-idna==3.8
+idna==3.10
     # via requests
-importlib-metadata==8.4.0
+importlib-metadata==8.5.0
     # via ansible-lint
 jinja2==3.1.4
     # via
@@ -68,7 +68,7 @@ markupsafe==2.1.5
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-molecule==24.8.0
+molecule==24.9.0
     # via
     #   -r requirements-dev.in
     #   molecule-plugins
@@ -88,7 +88,7 @@ pathspec==0.12.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.3.2
+platformdirs==4.3.3
     # via black
 pluggy==1.5.0
     # via molecule
@@ -114,7 +114,7 @@ requests==2.31.0
     #   molecule-plugins
 resolvelib==1.0.1
     # via ansible-core
-rich==13.8.0
+rich==13.8.1
     # via
     #   ansible-lint
     #   enrich
@@ -133,7 +133,7 @@ subprocess-tee==0.4.2
     # via
     #   ansible-compat
     #   ansible-lint
-urllib3==2.2.2
+urllib3==2.2.3
     # via
     #   docker
     #   requests
@@ -143,5 +143,5 @@ wcmatch==9.0
     #   molecule
 yamllint==1.35.1
     # via ansible-lint
-zipp==3.20.1
+zipp==3.20.2
     # via importlib-metadata
