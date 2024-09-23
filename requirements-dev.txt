@@ -4,7 +4,7 @@
 #
 #    pip-compile --no-emit-index-url --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==24.9.0
+ansible-compat==24.9.1
     # via
     #   ansible-lint
     #   molecule
@@ -14,7 +14,7 @@ ansible-core==2.17.4
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==24.9.0
+ansible-lint==24.9.2
     # via -r requirements-dev.in
 attrs==24.2.0
     # via
@@ -45,7 +45,7 @@ docker==7.1.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.16.0
+filelock==3.16.1
     # via ansible-lint
 idna==3.10
     # via requests
@@ -88,7 +88,7 @@ pathspec==0.12.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.3.3
+platformdirs==4.3.6
     # via black
 pluggy==1.5.0
     # via molecule
