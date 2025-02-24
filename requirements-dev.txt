@@ -4,7 +4,7 @@
 #
 #    pip-compile --no-emit-index-url --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==25.1.2
+ansible-compat==25.1.4
     # via
     #   ansible-lint
     #   molecule
@@ -14,7 +14,7 @@ ansible-core==2.18.2
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==25.1.2
+ansible-lint==25.1.3
     # via -r requirements-dev.in
 attrs==25.1.0
     # via
@@ -68,7 +68,7 @@ markupsafe==3.0.2
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-molecule==25.2.0
+molecule==25.3.1
     # via
     #   -r requirements-dev.in
     #   molecule-plugins
@@ -119,7 +119,7 @@ rich==13.9.4
     # via
     #   enrich
     #   molecule
-rpds-py==0.22.3
+rpds-py==0.23.1
     # via
     #   jsonschema
     #   referencing
