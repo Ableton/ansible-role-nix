@@ -8,7 +8,7 @@ ansible-compat==25.1.4
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.18.2
+ansible-core==2.18.3
     # via
     #   -r requirements-dev.in
     #   ansible-compat
@@ -37,7 +37,7 @@ click==8.1.8
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==44.0.1
+cryptography==44.0.2
     # via ansible-core
 distro==1.9.0
     # via selinux
