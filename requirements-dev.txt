@@ -8,7 +8,7 @@ ansible-compat==25.1.4
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.18.3
+ansible-core==2.18.4
     # via
     #   -r requirements-dev.in
     #   ansible-compat
@@ -115,11 +115,11 @@ requests==2.31.0
     #   molecule-plugins
 resolvelib==1.0.1
     # via ansible-core
-rich==13.9.4
+rich==14.0.0
     # via
     #   enrich
     #   molecule
-rpds-py==0.23.1
+rpds-py==0.24.0
     # via
     #   jsonschema
     #   referencing
@@ -133,7 +133,7 @@ subprocess-tee==0.4.2
     # via
     #   ansible-compat
     #   ansible-lint
-typing-extensions==4.12.2
+typing-extensions==4.13.0
     # via referencing
 urllib3==2.3.0
     # via
