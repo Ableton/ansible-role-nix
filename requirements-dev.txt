@@ -76,7 +76,7 @@ molecule-plugins[docker]==23.7.0
     # via -r requirements-dev.in
 mypy-extensions==1.0.0
     # via black
-packaging==24.2
+packaging==25.0
     # via
     #   ansible-compat
     #   ansible-core
