@@ -4,7 +4,7 @@
 #
 #    pip-compile --no-emit-index-url --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==25.1.5
+ansible-compat==25.5.0
     # via
     #   ansible-lint
     #   molecule
@@ -37,7 +37,7 @@ click==8.2.0
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==44.0.3
+cryptography==45.0.2
     # via ansible-core
 distro==1.9.0
     # via selinux
@@ -90,7 +90,7 @@ pathspec==0.12.1
     #   yamllint
 platformdirs==4.3.8
     # via black
-pluggy==1.5.0
+pluggy==1.6.0
     # via molecule
 pycparser==2.22
     # via cffi
@@ -119,7 +119,7 @@ rich==14.0.0
     # via
     #   enrich
     #   molecule
-rpds-py==0.24.0
+rpds-py==0.25.0
     # via
     #   jsonschema
     #   referencing
