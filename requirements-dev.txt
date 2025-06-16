@@ -24,7 +24,7 @@ black==25.1.0
     # via ansible-lint
 bracex==2.5.post1
     # via wcmatch
-certifi==2025.4.26
+certifi==2025.6.15
     # via requests
 cffi==1.17.1
     # via cryptography
@@ -37,7 +37,7 @@ click==8.2.1
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==45.0.3
+cryptography==45.0.4
     # via ansible-core
 distro==1.9.0
     # via selinux
@@ -123,7 +123,7 @@ rpds-py==0.25.1
     # via
     #   jsonschema
     #   referencing
-ruamel-yaml==0.18.13
+ruamel-yaml==0.18.14
     # via ansible-lint
 ruamel-yaml-clib==0.2.12
     # via ruamel-yaml
