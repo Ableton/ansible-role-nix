@@ -135,7 +135,7 @@ subprocess-tee==0.4.2
     #   ansible-lint
 typing-extensions==4.14.0
     # via referencing
-urllib3==2.4.0
+urllib3==2.5.0
     # via
     #   docker
     #   requests
