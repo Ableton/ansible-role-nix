@@ -8,7 +8,7 @@ ansible-compat==25.6.0
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.18.6
+ansible-core==2.18.7
     # via
     #   -r requirements-dev.in
     #   ansible-compat
@@ -24,7 +24,7 @@ black==25.1.0
     # via ansible-lint
 bracex==2.6
     # via wcmatch
-certifi==2025.7.9
+certifi==2025.7.14
     # via requests
 cffi==1.17.1
     # via cryptography
@@ -55,7 +55,7 @@ jinja2==3.1.6
     # via
     #   ansible-core
     #   molecule
-jsonschema==4.24.0
+jsonschema==4.25.0
     # via
     #   ansible-compat
     #   ansible-lint
