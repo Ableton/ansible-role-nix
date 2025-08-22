@@ -10,6 +10,34 @@
     - ableton.nix
 
   tasks:
+    - name: Get list of channels
+      become: true
+      become_user: "{{ nix_user }}"
+      ansible.builtin.command: "nix-channel --list"
+      environment:
+        PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
+      register: nix_channels
+      changed_when: false
+
+    - name: Add unstable channel
+      become: true
+      become_user: "{{ nix_user }}"
+      ansible.builtin.command: >
+        nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+      environment:
+        PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
+      changed_when: true
+      when: '"nixpkgs https://nixos.org/channels/nixpkgs-unstable" != nix_channels.stdout'
+
+    - name: Update channels
+      become: true
+      become_user: "{{ nix_user }}"
+      ansible.builtin.command: "nix-channel --update"
+      environment:
+        PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
+      changed_when: true
+      when: '"nixpkgs https://nixos.org/channels/nixpkgs-unstable" != nix_channels.stdout'
+
     - name: Get list of installed Nix packages
       become: true
       become_user: "{{ nix_user }}"
@@ -22,7 +50,7 @@
     - name: Try to install a Nix package
       become: true
       become_user: "{{ nix_user }}"
-      ansible.builtin.command: "nix-env -i hello"
+      ansible.builtin.command: "nix-env --install --attr nixpkgs.hello"
       environment:
         PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       when: "'hello' not in nix_packages.stdout"
