@@ -22,7 +22,7 @@
     - name: Try to install a Nix package
       become: true
       become_user: "{{ nix_user }}"
-      ansible.builtin.command: "nix-env -i hello"
+      ansible.builtin.command: "nix-env --install hello"
       environment:
         PATH: "/home/{{ nix_user }}/.nix-profile/bin:{{ lookup('env', 'PATH') }}"
       when: "'hello' not in nix_packages.stdout"
