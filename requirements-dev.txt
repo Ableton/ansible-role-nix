@@ -8,7 +8,7 @@ ansible-compat==25.8.1
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.19.0
+ansible-core==2.19.1
     # via
     #   -r requirements-dev.in
     #   ansible-compat
@@ -37,7 +37,7 @@ click==8.2.1
     #   molecule
 click-help-colors==0.9.4
     # via molecule
-cryptography==45.0.6
+cryptography==45.0.7
     # via ansible-core
 distro==1.9.0
     # via selinux
@@ -88,7 +88,7 @@ pathspec==0.12.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.3.8
+platformdirs==4.4.0
     # via black
 pluggy==1.6.0
     # via molecule
@@ -119,7 +119,7 @@ rich==14.1.0
     # via
     #   enrich
     #   molecule
-rpds-py==0.27.0
+rpds-py==0.27.1
     # via
     #   jsonschema
     #   referencing
