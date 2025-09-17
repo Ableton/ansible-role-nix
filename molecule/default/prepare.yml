@@ -1,0 +1,11 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    # This is needed to uncompress Nix, but only on noble. I'm not sure why it's not
+    # needed on focal or other distributions.
+    - name: Install platform-specific packages
+      ansible.builtin.apt:
+        name: "xz-utils"
+      when:
+        - 'ansible_distribution_version == "24.04"'
