@@ -4,8 +4,8 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: ansible-role-nix-focal
-    image: ubuntu:20.04
+  - name: ansible-role-nix-jammy
+    image: ubuntu:22.04
     privileged: true
   - name: ansible-role-nix-noble
     image: ubuntu:24.04
