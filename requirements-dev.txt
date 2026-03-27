@@ -116,7 +116,7 @@ referencing==0.36.2
     #   ansible-lint
     #   jsonschema
     #   jsonschema-specifications
-requests==2.32.5
+requests==2.33.0
     # via
     #   -r requirements-dev.in
     #   docker
