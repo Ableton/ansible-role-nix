@@ -1,5 +1,5 @@
 library(identifier: 'ableton-utils@0.29', changelog: false)
-library(identifier: 'groovylint@0.16', changelog: false)
+library(identifier: 'groovylint@0.18', changelog: false)
 library(identifier: 'python-utils@0.15', changelog: false)
 
 
