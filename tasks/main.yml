@@ -81,6 +81,10 @@
   when: should_install_nix  # noqa no-handler
   block:
     - name: Download installer script
+      delay: 10
+      register: installer_script_downloaded
+      retries: 5
+      until: installer_script_downloaded is successful
       ansible.builtin.get_url:
         url: "https://nixos.org/nix/install"
         dest: "{{ nix_script_dir }}/install_nix.sh"
