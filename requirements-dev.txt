@@ -4,17 +4,17 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==26.6.0
+ansible-compat==26.8.0
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.21.2
+ansible-core==2.21.3
     # via
     #   -r requirements-dev.in
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==26.6.0
+ansible-lint==26.8.0
     # via -r requirements-dev.in
 attrs==26.1.0
     # via
@@ -26,11 +26,11 @@ bracex==3.0.1
     # via wcmatch
 certifi==2026.7.22
     # via requests
-cffi==2.1.0
+cffi==2.1.1
     # via
     #   ansible-lint
     #   cryptography
-charset-normalizer==3.4.9
+charset-normalizer==3.5.1
     # via requests
 click==8.4.2
     # via
@@ -48,7 +48,7 @@ docker==7.2.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.32.0
+filelock==3.32.3
     # via ansible-lint
 idna==3.18
     # via requests
@@ -69,7 +69,7 @@ markupsafe==3.0.3
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-molecule==26.6.0
+molecule==26.8.0
     # via
     #   -r requirements-dev.in
     #   molecule-plugins
@@ -77,7 +77,7 @@ molecule-plugins[docker]==26.7.15
     # via -r requirements-dev.in
 mypy-extensions==1.1.0
     # via black
-packaging==26.2
+packaging==26.3
     # via
     #   ansible-compat
     #   ansible-core
@@ -89,7 +89,7 @@ pathspec==1.1.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.11.0
+platformdirs==4.11.3
     # via black
 pluggy==1.6.0
     # via molecule
@@ -141,7 +141,7 @@ urllib3==2.7.0
     # via
     #   docker
     #   requests
-wcmatch==11.0
+wcmatch==11.0.1
     # via
     #   ansible-lint
     #   molecule
