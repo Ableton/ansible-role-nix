@@ -48,9 +48,9 @@ docker==7.2.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.32.3
+filelock==3.32.4
     # via ansible-lint
-idna==3.18
+idna==3.19
     # via requests
 jinja2==3.1.6
     # via
@@ -95,7 +95,7 @@ pluggy==1.6.0
     # via molecule
 pycparser==3.0
     # via cffi
-pygments==2.20.0
+pygments==2.21.0
     # via rich
 pytokens==0.4.1
     # via black
