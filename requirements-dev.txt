@@ -4,39 +4,39 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
-ansible-compat==26.8.0
+ansible-compat==26.10.0
     # via
     #   ansible-lint
     #   molecule
-ansible-core==2.21.3
+ansible-core==2.21.5
     # via
     #   -r requirements-dev.in
     #   ansible-compat
     #   ansible-lint
     #   molecule
-ansible-lint==26.8.0
+ansible-lint==26.10.1
     # via -r requirements-dev.in
 attrs==26.1.0
     # via
     #   jsonschema
     #   referencing
-black==26.5.1
+black==26.10.1
     # via ansible-lint
-bracex==3.0.1
+bracex==3.1
     # via wcmatch
-certifi==2026.7.22
+certifi==2026.10.18
     # via requests
 cffi==2.1.1
     # via
     #   ansible-lint
     #   cryptography
-charset-normalizer==3.5.1
+charset-normalizer==3.5.2
     # via requests
 click==8.5.0
     # via
     #   black
     #   molecule
-cryptography==50.0.1
+cryptography==50.0.2
     # via
     #   ansible-core
     #   ansible-lint
@@ -48,9 +48,9 @@ docker==7.2.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==3.32.4
+filelock==4.2.3
     # via ansible-lint
-idna==3.19
+idna==3.20
     # via requests
 jinja2==3.1.6
     # via
@@ -65,15 +65,15 @@ jsonschema-specifications==2025.9.1
     # via jsonschema
 markdown-it-py==4.2.0
     # via rich
-markupsafe==3.0.3
+markupsafe==3.0.4
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
-molecule==26.8.0
+molecule==26.10.0
     # via
     #   -r requirements-dev.in
     #   molecule-plugins
-molecule-plugins[docker]==26.7.15
+molecule-plugins[docker]==26.10.12
     # via -r requirements-dev.in
 mypy-extensions==1.1.0
     # via black
@@ -89,11 +89,11 @@ pathspec==1.1.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.11.5
+platformdirs==4.13.4
     # via black
-pluggy==1.6.0
+pluggy==1.7.0
     # via molecule
-pycparser==3.0
+pycparser==3.11
     # via cffi
 pygments==2.21.0
     # via rich
@@ -121,13 +121,11 @@ rich==15.0.0
     # via
     #   enrich
     #   molecule
-rpds-py==2026.6.3
+rpds-py==2026.9.1
     # via
     #   jsonschema
     #   referencing
 ruamel-yaml==0.19.1
-    # via ansible-lint
-ruamel-yaml-clib==0.2.15
     # via ansible-lint
 selinux==0.3.0
     # via molecule-plugins
@@ -141,7 +139,7 @@ urllib3==2.8.0
     # via
     #   docker
     #   requests
-wcmatch==11.0.1
+wcmatch==11.1
     # via
     #   ansible-lint
     #   molecule
