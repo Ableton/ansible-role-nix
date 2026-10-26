@@ -22,9 +22,9 @@ attrs==26.1.0
     #   referencing
 black==26.10.1
     # via ansible-lint
-bracex==3.1
+bracex==3.2
     # via wcmatch
-certifi==2026.10.19
+certifi==2026.10.23
     # via requests
 cffi==2.1.1
     # via
@@ -48,7 +48,7 @@ docker==7.2.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==4.2.3
+filelock==4.2.4
     # via ansible-lint
 idna==3.20
     # via requests
@@ -89,11 +89,11 @@ pathspec==1.1.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.13.4
+platformdirs==4.13.5
     # via black
 pluggy==1.7.0
     # via molecule
-pycparser==3.11
+pycparser==3.12
     # via cffi
 pygments==2.21.0
     # via rich
@@ -139,7 +139,7 @@ urllib3==2.8.0
     # via
     #   docker
     #   requests
-wcmatch==11.1
+wcmatch==11.2
     # via
     #   ansible-lint
     #   molecule
