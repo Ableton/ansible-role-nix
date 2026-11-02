@@ -48,7 +48,7 @@ docker==7.2.0
     # via molecule-plugins
 enrich==1.2.7
     # via molecule
-filelock==4.2.4
+filelock==4.2.6
     # via ansible-lint
 idna==3.20
     # via requests
@@ -89,7 +89,7 @@ pathspec==1.1.1
     #   ansible-lint
     #   black
     #   yamllint
-platformdirs==4.13.5
+platformdirs==4.14.3
     # via black
 pluggy==1.7.0
     # via molecule
